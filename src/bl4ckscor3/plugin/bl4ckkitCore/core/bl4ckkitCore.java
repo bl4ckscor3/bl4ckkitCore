@@ -13,11 +13,17 @@ public class bl4ckkitCore extends JavaPlugin
 	private static PlayerManager pmgr;
 	
 	@Override
-	public void onEnable()
+	public void onLoad()
 	{
 		msgmgr = MessageManager.getInstance();
 		plmgr = PluginManager.getInstance();
 		pmgr = PlayerManager.getInstance();
+		msgmgr.sendEnabledMessage(this);
+	}
+
+	@Override
+	public void onEnable()
+	{
 		msgmgr.sendEnabledMessage(this);
 	}
 	
