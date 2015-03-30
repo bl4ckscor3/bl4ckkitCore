@@ -1,0 +1,5 @@
+name: bl4ckkitCore
+main: bl4ckscor3.plugin.bl4ckkitcore.core.bl4ckkitCore
+version: 1.0
+author: bl4ckscor3
+description: Provides core functionality for my other plugins 
