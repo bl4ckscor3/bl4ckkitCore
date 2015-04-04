@@ -2,6 +2,7 @@ package bl4ckscor3.plugin.bl4ckkitCore.core;
 
 import java.util.ArrayList;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,14 +20,15 @@ public class bl4ckkitCore extends JavaPlugin
 	private static PluginManager plmgr;
 	private static PlayerManager pmgr;
 	private static ArrayList<Plugin> plugins = new ArrayList<Plugin>();
+	private static bl4ckkitCore instance;
 	
 	@Override
 	public void onLoad()
 	{
+		instance = this;
 		msgmgr = MessageManager.getInstance();
 		plmgr = PluginManager.getInstance();
 		pmgr = PlayerManager.getInstance();
-		msgmgr.sendEnabledMessage(this);
 	}
 
 	@Override
@@ -98,6 +100,7 @@ public class bl4ckkitCore extends JavaPlugin
 	 */
 	public static void registerPlugin(Plugin pl)
 	{
+		msgmgr.sendConsoleMessage(instance, ChatColor.RED + "Registered plugin " + pl.getDescription().getName());
 		plugins.add(pl);
 	}
 	
@@ -106,6 +109,7 @@ public class bl4ckkitCore extends JavaPlugin
 	 */
 	public static void unregisterPlugin(Plugin pl)
 	{
+		msgmgr.sendConsoleMessage(instance, ChatColor.RED + "Unregistered plugin " + pl.getDescription().getName());
 		plugins.remove(pl);
 	}
 	
