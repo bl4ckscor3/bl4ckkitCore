@@ -2,7 +2,7 @@ package bl4ckscor3.plugin.bl4ckkitCore.manager;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 
 public class MessageManager
@@ -28,9 +28,9 @@ public class MessageManager
 	 * @param pl - The Plugin to send the message from
 	 * @param msg - The message to send
 	 */
-	public void sendChatMessage(Player p, Plugin pl, String msg)
+	public void sendChatMessage(CommandSender sender, Plugin pl, String msg)
 	{
-		p.sendMessage("[" + ChatColor.BLUE + pl.getDescription().getName() + ChatColor.RESET + "] " + msg);
+		sender.sendMessage("[" + ChatColor.BLUE + pl.getDescription().getName() + ChatColor.RESET + "] " + msg);
 	}
 	
 	/**
