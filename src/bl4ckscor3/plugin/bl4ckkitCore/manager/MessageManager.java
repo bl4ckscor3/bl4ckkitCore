@@ -24,7 +24,7 @@ public class MessageManager
 	/**
 	 * Sends a message with the plugin name prefixed to a player
 	 * 
-	 * @param p - The Player to send the message to
+	 * @param sender - The Player to send the message to
 	 * @param pl - The Plugin to send the message from
 	 * @param msg - The message to send
 	 */
