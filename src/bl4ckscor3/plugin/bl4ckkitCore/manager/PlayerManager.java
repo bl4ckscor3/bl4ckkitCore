@@ -34,4 +34,11 @@ public class PlayerManager
 		}
 		return false;
 	}
+	
+	public boolean hasPlayedBefore(String name)
+	{
+		if(isPlayerOnline(name))
+			return true;
+		return Bukkit.getOfflinePlayer(name).hasPlayedBefore();
+	}
 }
